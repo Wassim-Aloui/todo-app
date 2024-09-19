@@ -30,7 +30,5 @@ export class AuthService {
     return null;
   }
 
-  async validateUser(email: string): Promise<User | null> {
-    return this.userModel.findOne({ email });
-  }
+
 }
