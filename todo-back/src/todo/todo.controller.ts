@@ -39,7 +39,7 @@ export class TodoController {
     }
 
     @Delete(':id')
-    async deleteTodo(@Param('id') id: string): Promise<Todo> {
+    async deleteTodo(@Param('id') id: string): Promise<{ message: string; todo: Todo }> {
 
         const todo = await this.todoService.deleteTodoById(id);
         if (!todo) {
@@ -47,6 +47,10 @@ export class TodoController {
             throw new NotFoundException("Todo not found ")
         }
 
-        return todo
+
+        return {
+            message: 'Todo deleted successfully ',
+            todo
+        }
     }
 }
