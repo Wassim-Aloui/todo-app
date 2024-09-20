@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<div class="form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h3 class="register">Login</h3>
+      
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email"
+          aria-describedby="emailHelp" placeholder="Enter email" />
+        <div *ngIf="formControls['email'].invalid && (formControls['email'].touched)" class="text-danger">
+          <div *ngIf="formControls['email'].errors?.['required']">Email is required.</div>
+          <div *ngIf="formControls['email'].errors?.['email']">Enter a valid email.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password"
+          placeholder="Password" />
+        <div *ngIf="formControls['password'].invalid && (formControls['password'].touched)" class="text-danger">
+          <div *ngIf="formControls['password'].errors?.['required']">Password is required.</div>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <div  class="text-danger">{{ errorMessage }}</div>
+    </form>
+  </div>
+  
