@@ -5,12 +5,7 @@
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [API Documentation](#api-documentation)
-- [Frontend Usage](#frontend-usage)
-- [Backend Usage](#backend-usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 This is a full-stack application built with Angular for the frontend and NestJS for the backend. 
