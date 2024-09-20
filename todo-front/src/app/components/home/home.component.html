@@ -1,2 +1,42 @@
 <app-navbar></app-navbar>
 
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card">
+          <div class="card-body p-5">
+            <h5>Add new task</h5>
+            <form (ngSubmit)="addTask()" class="d-flex justify-content-center align-items-center mb-4">
+              <div class="form-outline flex-fill me-2">
+                <input type="text" id="form1" class="form-control" placeholder="Task title"
+                       [(ngModel)]="title" name="title" />
+              </div>
+              &nbsp; &nbsp;
+              <div class="form-outline flex-fill me-2">
+                <input type="text" id="form2" class="form-control" placeholder="Task description"
+                       [(ngModel)]="description" name="description" />
+              </div>
+              &nbsp;
+              <button type="submit" class="btn btn-info">Add</button>
+            </form>
+
+    
+            <h5>Tasks list</h5>
+            <ul class="list-group mb-0">
+              <li *ngFor="let t of tasks" class="list-group-item d-flex align-items-center border-0 mb-0 rounded"
+                  style="background-color: #f4f6f7;">
+               {{ t.title }} | {{ t.description }} 
+               <button id="done" class="btn btn-outline-success" (click)="deleteTask(t._id)">Done</button>
+            </li>
+              
+            </ul>
+
+    
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

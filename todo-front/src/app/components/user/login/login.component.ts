@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         if (response && response.access_token) {
           localStorage.setItem("access_token", response.access_token);
           localStorage.setItem("connected", "true");
-          this.router.navigateByUrl("/todo");
+          this.router.navigateByUrl("/home");
         } else {
           this.errorMessage = 'Login failed. Please check your credentials and try again.';
         }
