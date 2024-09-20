@@ -21,9 +21,11 @@ export class UserService {
 
   logout() {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('connected');
+
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('access_token');
+    return !!localStorage.getItem('connected');
   }
 }
